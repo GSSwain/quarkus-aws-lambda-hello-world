@@ -18,7 +18,7 @@ jobs:
       - name: Build native executable
         run: mvn package -Pnative
       - name: Deploy
-        run: sh target/manage.sh native create
+        run: bash target/manage.sh native create
         env:
           CI: true
           LAMBDA_ROLE_ARN: ${{ secrets.LAMBDA_ROLE_ARN }}
