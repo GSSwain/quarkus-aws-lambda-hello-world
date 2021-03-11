@@ -15,3 +15,18 @@ Build the project and create a container image using the following command
 Locally invoke the Lambda function using
 
 `sam local invoke --template target/sam.native.yaml --event payload.json`.
+
+## Deployment
+
+One needs an AWS Access key id, Secret access key, Region and a Lambda role to be set in the following environment varibales respectively AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION and LAMBDA_ROLE_ARN
+
+
+You can also use `aws configure` for setting AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and AWS_DEFAULT_REGION  as well.
+
+Create a Lambda execution role and attach an apporpriate role policy by following the below URL
+
+https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html
+
+Finally run the below command to create the lambda function on AWS
+
+`bash target/manage.sh native create`
